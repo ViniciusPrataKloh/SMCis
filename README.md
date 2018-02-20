@@ -25,8 +25,7 @@ sudo apt-get install gcc python3-psutil freeipmi
 ## Utilização
 
 Para monitorar uma aplicação com o módulo de CPU, é preciso utilizar o lançador de aplicações e em seguida executar o módulo, informando como parâmetro de entrada o nome da aplicação.
-
-## Running
+Utilizando dois Terminais:
 
 ```shell
 ./launcher.sh
@@ -36,9 +35,34 @@ Para monitorar uma aplicação com o módulo de CPU, é preciso utilizar o lanç
 sudo python3 process_monitor.py [PROCESS_NAME]
 ```
 
+Ou utilizar apenas um Terminal com o comando:
+
+```shell
+./launcher2.sh & sudo python3 process_monitor3.py lud_omp
+```
 ## Arquivos de saída
 
 * [PROCESS_NAME.dat] - contendo as informações de tempo da amostras e recursos de hardware
 * power.dat - contendo as coletas instantâneas do consumo de potência
 * temperature.dat - contendo as informações de temperatura das CPUs
 
+# [2] Módulo de monitoramento em GPU
+
+# [3] Módulo de visualização - GraphCis
+
+## URL do servidor
+
+Por ser uma ferramenta web, o módulo de visualização GraphCis pode ser acessado pela URL ...
+
+## Utilização
+
+Resumo de como utilizar o GraphCis
+
+
+## Conversão dos resultados para o formato json
+
+Para converter os dados dos experimentos em CPU para serem visualizados no GraphCis, é preciso apenas executar o script "parse_json.sh".
+
+```shell
+./parse_json.sh
+```
