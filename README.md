@@ -18,7 +18,7 @@ Para contornar as limitações encontradas nos sistemas de monitoramento convenc
 
 ## Dependências:
 
-- ```shell
+```shell
 sudo apt-get install gcc python3-psutil freeipmi
 ```
 
