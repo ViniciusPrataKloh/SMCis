@@ -6,21 +6,25 @@
 
 
 ## Descrição
-Para contornar as limitações encontradas nos sistemas de monitoramento convencionais foi desenvolvido o SMCis. Esse sistema tem o objetivo de ser uma ferramenta para o monitoramento de aplicações e visualização de dados experimentais, de fácil utilização, com altas taxas de amostragem e baixo impacto no consumo de recursos do sistema. A principal característica do SMCIs é monitorar o consumo dos recursos pela aplicação em execução, permitindo relacionar graficamente o desempenho e consumo de recursos computacionais com o consumo de energia.
+Para contornar as limitações encontradas nos sistemas de monitoramento convencionais foi desenvolvido o SMCis. Esse sistema tem o objetivo de ser uma ferramenta para o monitoramento de aplicações e visualização de dados experimentais, de fácil utilização, com altas taxas de amostragem e baixo impacto no consumo de recursos do sistema. A principal característica do SMCis é monitorar o consumo dos recursos pela aplicação em execução, permitindo relacionar graficamente o desempenho e consumo de recursos computacionais com o consumo de energia.
 
 ## Características
 
 * Coletar o consumo dos recursos de hardware (utilização de CPU, memória, disco e rede)
 * Coletar informações dos sensores internos (potência e temperatura)
-* Visualização e análise dos dados graficamente
+* Visualização gráfica e dados salvos para análise
 
 # [1] Módulo de monitoramento em CPU
 
 ## Dependências:
 
 ```shell
-sudo apt-get install gcc python3-psutil freeipmi
+sudo apt-get install gcc python3-psutil freeipmi/ipmitool
 ```
+
+## Download
+
+Os arquivos podem ser baixados pelo link https://github.com/ViniciusPrataKloh/SMCis.git
 
 ## Utilização
 
@@ -38,7 +42,7 @@ sudo python3 process_monitor.py [PROCESS_NAME]
 Ou utilizar apenas um Terminal com o comando:
 
 ```shell
-./launcher2.sh & sudo python3 process_monitor3.py lud_omp
+./launcher2.sh & sudo python3 process_monitor3.py [PROCESS_NAME]
 ```
 ## Arquivos de saída
 
