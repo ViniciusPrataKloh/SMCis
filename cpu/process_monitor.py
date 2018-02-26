@@ -96,10 +96,8 @@ def output_json(procname, timestamp, cpu, mem, power):
 #  Main function
 #
 def main():
-    PROCNAME = "python3"
-    LAUNCHER = "python3"
-    #PROCNAME = sys.argv[1]
-    #LAUNCHER = "launcher2.sh"
+    PROCNAME = sys.argv[1]
+    LAUNCHER = "launcher.sh"
     DATE = datetime.datetime.now()
     start = int(DATE.timestamp() * 1000)
 
@@ -132,8 +130,6 @@ def main():
              #output_json(PROCNAME, now-start, 0.00, 0.00, str(200))
              output(PROCNAME, now-start, 0, 0.00, 0.00, {'disk': (0, 0, 0), 'net': (0, 0, 0)})
              time.sleep(0.2)
-
-#    os.system("sed ':a;$!{N;ba;};s/\(.*\),/\]/' fwi.intel64.json >> fwi.intel64.json")
 
 if __name__ == "__main__":
     main()
