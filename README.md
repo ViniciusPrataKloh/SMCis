@@ -39,7 +39,13 @@ Assim como em um escalonador, é preciso configurar as variáveis básicas no ar
 * DIR_OUTPUT="diretório de saída para os arquivos" 
 * BIN="comando para executar a aplicação"
 
-O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento, é necessário apenas passar como parâmento o nome da aplicação a ser monitorada.
+O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento, é necessário inserir o nome da placa de rede a ser monitorada e passar como parâmento o nome da aplicação a ser monitorada.
+
+Para listar as placas de rede ativas, pode ser utilizado o comando:
+
+```shell
+ifconfig -a
+```
 
 O monitoramento pode ser realizado utilizando dois Terminais, sendo um para executar cada script:
 
@@ -61,9 +67,10 @@ Obs: O launcher deve sempre iniciar a execução antes do monitor.
 
 ## Arquivos de saída
 
-* [PROCESS_NAME.dat] - contendo as informações de tempo da amostras e recursos de hardware
+* [PROCESS_NAME.dat] - contendo as informações de tempo e consumo dos recursos de hardware
 * power.dat - contendo as coletas instantâneas do consumo de potência
 * temperature.dat - contendo as informações de temperatura das CPUs
+* [PROCESS_NAME_Start_End.dat] - contendo os horários de início e fim da execução da aplicação
 
 # [2] Módulo de monitoramento em GPU
 
