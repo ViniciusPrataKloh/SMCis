@@ -28,8 +28,10 @@ Os arquivos podem ser baixados pelo link https://github.com/ViniciusPrataKloh/SM
 
 ## Utilização
 
-Para monitorar aplicações em CPU com o SMCis, é preciso executar dois scripts: launcher.sh e process_monitor.py.
+Para monitorar aplicações em CPU com o SMCis é preciso executar dois scripts: 'launcher.sh' e 'process_monitor.py'.
+
 O 'launcher.sh' é responsável por executar a aplicação com as configurações de experimentos necessárias. Por exemplo, número de threads e intervalo para monitoramento do consumo estático do sistema.
+
 Assim como em um escalonador, é preciso configurar as variáveis básicas no arquivo 'launcher.sh' com as informações:
 
 * APP="nome da aplicação"
@@ -37,9 +39,9 @@ Assim como em um escalonador, é preciso configurar as variáveis básicas no ar
 * DIR_OUTPUT="diretório de saída para os arquivos" 
 * BIN="comando para executar a aplicação"
 
-O 'process_monitor.py' é responsável pelo monitoramento da aplicação. Para seu funcionamento, é necessário apenas passar como parâmento o nome da aplicação a ser monitorada.
+O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento, é necessário apenas passar como parâmento o nome da aplicação a ser monitorada.
 
-O monitoramento pode ser realizado utilizando dois Terminais, sendo um para executar cada script, com os comandos:
+O monitoramento pode ser realizado utilizando dois Terminais, sendo um para executar cada script:
 
 ```shell
 ./launcher.sh
@@ -52,8 +54,10 @@ sudo python3 process_monitor.py [PROCESS_NAME]
 Ou utilizando apenas um Terminal com o comando:
 
 ```shell
-./launcher2.sh & sudo python3 process_monitor.py [PROCESS_NAME]
+./launcher.sh & sudo python3 process_monitor.py [PROCESS_NAME]
 ```
+
+Obs: O launcher deve sempre iniciar a execução antes do monitor.
 
 ## Arquivos de saída
 
@@ -77,7 +81,7 @@ Inicialmente, o usuário faz o upload do arquivo com os dados que deseja analisa
 
 Atualmente GraphCis trabalha com arquivos de entrada somente no formato JSON.
 
-Example of a json file:
+Examplo de um arquivo json:
 
 ```shell
 [
