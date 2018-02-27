@@ -28,8 +28,18 @@ Os arquivos podem ser baixados pelo link https://github.com/ViniciusPrataKloh/SM
 
 ## Utilização
 
-Para monitorar uma aplicação com o módulo de CPU, é preciso utilizar o lançador de aplicações e em seguida executar o módulo, informando como parâmetro de entrada o nome da aplicação.
-Utilizando dois Terminais:
+Para monitorar aplicações em CPU com o SMCis, é preciso executar dois scripts: launcher.sh e process_monitor.py.
+O 'launcher.sh' é responsável por executar a aplicação com as configurações de experimentos necessárias. Por exemplo, número de threads e intervalo para monitoramento do consumo estático do sistema.
+Assim como em um escalonador, é preciso configurar as variáveis básicas no arquivo 'launcher.sh' com as informações:
+
+* APP="nome da aplicação"
+* NUM_THREADS="número de threads"
+* DIR_OUTPUT="diretório de saída para os arquivos" 
+* BIN="comando para executar a aplicação"
+
+O 'process_monitor.py' é responsável pelo monitoramento da aplicação. Para seu funcionamento, é necessário apenas passar como parâmento o nome da aplicação a ser monitorada.
+
+O monitoramento pode ser realizado utilizando dois Terminais, sendo um para executar cada script, com os comandos:
 
 ```shell
 ./launcher.sh
@@ -39,11 +49,12 @@ Utilizando dois Terminais:
 sudo python3 process_monitor.py [PROCESS_NAME]
 ```
 
-Ou utilizar apenas um Terminal com o comando:
+Ou utilizando apenas um Terminal com o comando:
 
 ```shell
 ./launcher2.sh & sudo python3 process_monitor.py [PROCESS_NAME]
 ```
+
 ## Arquivos de saída
 
 * [PROCESS_NAME.dat] - contendo as informações de tempo da amostras e recursos de hardware
