@@ -70,12 +70,36 @@ Obs: O launcher deve sempre iniciar a execução antes do monitor.
 
 ## Arquivos de saída
 
-* [PROCESS_NAME.dat] - contendo as informações de tempo e consumo dos recursos de hardware.
+* [nome_da_aplicação.dat] - contendo as informações de tempo e consumo dos recursos de hardware.
 * power.dat - contendo as coletas instantâneas do consumo de potência.
 * temperature.dat - contendo as informações de temperatura das CPUs.
-* [PROCESS_NAME_Start_End.dat] - contendo os horários de início e fim da execução da aplicação.
+* [start_end.dat] - contendo os horários de início e fim da execução da aplicação.
 
 # [2] Módulo de monitoramento em GPU
+
+## Dependências
+
+Instalação do CUDA Toolkit que pode ser baixado pelo link https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604.
+
+## Utilização
+
+Para monitorar aplicações em GPU com o SMCis, também é preciso executar dois scripts: 'launcher.sh' e 'gpu_monitoring_module.sh'.
+
+No 'launcher.sh' é necessário informar o nome da aplicação a ser executada:
+
+* BIN="comando para executar a aplicação"
+
+```shell
+./launcher.sh
+```
+
+```shell
+sudo ./gpu_monitoring_module.sh
+```
+
+## Arquivo de saída
+
+* output.dat - contendo todas as informações referentes ao monitoramento da aplicação.
 
 # [3] Módulo de visualização - GraphCis
 
@@ -111,6 +135,18 @@ Para converter os dados dos experimentos em CPU para serem visualizados no Graph
 
 ```shell
 ./parse_json_CPU.sh <nome da aplicação.dat> <power.dat> <temperature.dat>
+```
+
+Para converter os dados do monitoramento em GPU, é preciso executar o script 'parse_json_GPU.cpp'.
+
+O script pode ser compilado e executado com os comandos:
+
+```shell
+g++ -o parse_json_CPU parse_json_CPU.cpp
+```
+
+```shell
+./parse_json_CPU output.dat
 ```
 
 ## Nota
