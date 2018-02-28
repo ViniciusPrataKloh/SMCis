@@ -51,8 +51,10 @@ def io_rate_collector(p, i):
 # Instantaneous power collector
 #
 def power_collector():
-    os.system("/usr/sbin/ipmi-dcmi --get-system-power-statistics | grep Current | awk '{print $4}' >> power.dat")
+    #os.system("/usr/sbin/ipmi-dcmi --get-system-power-statistics | grep Current | awk '{print $4}' >> power.dat")
+    os.system("ipmitool dcmi power reading | grep Instantaneous | awk '{print $4}'")
     os.system("./temp.sh")
+
 #
 # Writer output data file
 #

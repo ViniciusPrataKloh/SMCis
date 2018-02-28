@@ -14,6 +14,20 @@ Para contornar as limitações encontradas nos sistemas de monitoramento convenc
 * Coletar informações dos sensores internos (potência e temperatura)
 * Visualização gráfica e dados salvos para análise
 
+## Dependências comuns
+
+Os módulos de monitoramento coletam as informações dos sensores de potência e temperatura com o IPMItool. O mesmo pode ser instalado com o comando:
+
+```shell
+sudo apt-get install ipmitool
+```
+
+É necessário também confirgurar os sensores com os seguinte comando:
+
+```shell
+sudo modprobe ipmi_si & modprobe ipmi_devintf & modprobe ipmi_msghandler
+```
+
 # [1] Módulo de monitoramento em CPU
 
 ## Dependências:
