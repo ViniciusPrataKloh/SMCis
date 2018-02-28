@@ -26,6 +26,10 @@ sudo apt-get install gcc python3-psutil freeipmi/ipmitool
 
 Os arquivos podem ser baixados pelo link https://github.com/ViniciusPrataKloh/SMCis.git
 
+```shell
+git clone https://github.com/ViniciusPrataKloh/SMCis.git
+```
+
 ## Utilização
 
 Para monitorar aplicações em CPU com o SMCis é preciso executar dois scripts: 'launcher.sh' e 'process_monitor.py'.
@@ -36,7 +40,6 @@ Assim como em um escalonador, é preciso configurar as variáveis básicas no ar
 
 * APP="nome da aplicação"
 * NUM_THREADS="número de threads"
-* DIR_OUTPUT="diretório de saída para os arquivos" 
 * BIN="comando para executar a aplicação"
 
 O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento, é necessário inserir o nome da placa de rede a ser monitorada e passar como parâmento o nome da aplicação a ser monitorada.
@@ -54,13 +57,13 @@ O monitoramento pode ser realizado utilizando dois Terminais, sendo um para exec
 ```
 
 ```shell
-sudo python3 process_monitor.py [PROCESS_NAME]
+sudo python3 cpu_monitoring_module.py <nome da aplicação> <nome da interface de rede>
 ```
 
 Ou utilizando apenas um Terminal com o comando:
 
 ```shell
-./launcher.sh & sudo python3 process_monitor.py [PROCESS_NAME]
+./launcher.sh & sudo python3 cpu_monitoring_module.py <nome da aplicação> <nome da interface de rede>
 ```
 
 Obs: O launcher deve sempre iniciar a execução antes do monitor.
@@ -107,7 +110,7 @@ Examplo de um arquivo json:
 Para converter os dados dos experimentos em CPU para serem visualizados no GraphCis, é preciso apenas executar o script "parse_json.sh".
 
 ```shell
-./parse_json.sh
+./parse_json_CPU.sh <nome da aplicação.dat> <power.dat> <temperature.dat>
 ```
 
 ## Nota
