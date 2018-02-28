@@ -26,7 +26,7 @@ def memory_usage_collector(p):
 #
 # IO Disk and Network rate collector
 #
-def io_rate_collector(p):
+def io_rate_collector(p, i):
     '''
      Collect before and after to calculate the io rate of disk and network
     '''
@@ -40,8 +40,8 @@ def io_rate_collector(p):
          read_per_sec = collected_disk_after.read_bytes - collected_disk_before.read_bytes
          write_per_sec = collected_disk_after.write_bytes - collected_disk_before.write_bytes
 
-         sent_per_sec = collected_net_after['enp4s0f0'].bytes_sent - collected_net_before['enp4s0f0'].bytes_sent
-         recv_per_sec = collected_net_after['enp4s0f0'].bytes_recv - collected_net_before['enp4s0f0'].bytes_recv
+         sent_per_sec = collected_net_after[i].bytes_sent - collected_net_before[i].bytes_sent
+         recv_per_sec = collected_net_after[i].bytes_recv - collected_net_before[i].bytes_recv
 
          return {'disk': (read_per_sec, write_per_sec, read_per_sec + write_per_sec), 'net': (sent_per_sec, recv_per_sec, sent_per_sec + recv_per_sec)}
     except Exception as e:
@@ -97,6 +97,7 @@ def output_json(procname, timestamp, cpu, mem, power):
 #
 def main():
     PROCNAME = sys.argv[1]
+    INTERFACE = sys.argv[2]
     LAUNCHER = "launcher.sh"
     DATE = datetime.datetime.now()
     start = int(DATE.timestamp() * 1000)
@@ -117,7 +118,7 @@ def main():
              while pid_process.is_running():
                   cpu = '{:.2f}'.format(cpu_rate_collector(pid_process) / psutil.cpu_count())
                   mem = '{:.2f}'.format(memory_usage_collector(pid_process))
-                  io = io_rate_collector(pid_process)
+                  io = io_rate_collector(pid_process, INTERFACE)
                   power = power_collector()
                   DATE = datetime.datetime.now()
                   now = int(DATE.timestamp() * 1000)
