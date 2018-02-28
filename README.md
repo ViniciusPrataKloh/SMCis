@@ -67,10 +67,10 @@ Obs: O launcher deve sempre iniciar a execução antes do monitor.
 
 ## Arquivos de saída
 
-* [PROCESS_NAME.dat] - contendo as informações de tempo e consumo dos recursos de hardware
-* power.dat - contendo as coletas instantâneas do consumo de potência
-* temperature.dat - contendo as informações de temperatura das CPUs
-* [PROCESS_NAME_Start_End.dat] - contendo os horários de início e fim da execução da aplicação
+* [PROCESS_NAME.dat] - contendo as informações de tempo e consumo dos recursos de hardware.
+* power.dat - contendo as coletas instantâneas do consumo de potência.
+* temperature.dat - contendo as informações de temperatura das CPUs.
+* [PROCESS_NAME_Start_End.dat] - contendo os horários de início e fim da execução da aplicação.
 
 # [2] Módulo de monitoramento em GPU
 
