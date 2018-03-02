@@ -55,14 +55,6 @@ exit
 sudo apt-get install gcc python3-psutil freeipmi/ipmitool
 ```
 
-## Download
-
-Os arquivos podem ser baixados pelo link https://github.com/ViniciusPrataKloh/SMCis.git
-
-```shell
-git clone https://github.com/ViniciusPrataKloh/SMCis.git
-```
-
 ## Utilização
 
 Para monitorar aplicações em CPU com o SMCis é preciso executar dois scripts: 'launcher.sh' e 'process_monitor.py'.
