@@ -127,7 +127,7 @@ O monitoramento pode ser realizado com os comandos:
 ```
 
 ```shell
-gpu_monitoring_module.sh > output.dat
+./gpu_monitoring_module.sh > output.dat
 ```
 
 ## Arquivo de saída
