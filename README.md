@@ -164,7 +164,7 @@ Examplo de um arquivo json:
 ]
 ```
 
-Para converter os dados dos experimentos em CPU para serem visualizados no GraphCis, é preciso apenas executar o script "parse_json.sh".
+Para converter os dados dos experimentos em CPU para serem visualizados no GraphCis, é preciso apenas executar o script "parse_json_CPU.sh".
 
 ```shell
 ./parse_json_CPU.sh <nome da aplicação.dat> <power.dat> <temperature.dat>
