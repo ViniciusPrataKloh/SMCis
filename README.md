@@ -56,7 +56,7 @@ Assim como em um escalonador, é preciso configurar as variáveis básicas no ar
 * NUM_THREADS="número de threads"
 * BIN="comando para executar a aplicação"
 
-O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento, é necessário inserir o nome da placa de rede a ser monitorada e passar como parâmento o nome da aplicação a ser monitorada.
+O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento é necessário inserir o nome da placa de rede a ser monitorada e passar como parâmento o nome da aplicação a ser monitorada.
 
 Para listar as placas de rede ativas, pode ser utilizado o comando:
 
@@ -102,6 +102,14 @@ Para monitorar aplicações em GPU com o SMCis, também é preciso executar dois
 No 'launcher.sh' é necessário informar o nome da aplicação a ser executada:
 
 * BIN="comando para executar a aplicação"
+
+O script 'GPU_monitor.cu' precisa ser compilado pois é utilizado pelo 'gpu_monitoring_module.sh':
+
+```shell
+/usr/local/cuda-8.0/bin/nvcc -o GPU_monitor GPU_monitor.cu -lnvidia-ml
+```
+
+O monitoramento pode ser realizado com os comandos:
 
 ```shell
 ./launcher.sh
