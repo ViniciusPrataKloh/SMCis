@@ -28,6 +28,18 @@ sudo apt-get install ipmitool
 sudo modprobe ipmi_si & sudo modprobe ipmi_devintf & sudo modprobe ipmi_msghandler
 ```
 
+## Importante
+
+Como é necessária a permissão de sudo, é importante deixar a senha temporariamente salva, para que não seja preciso digitá-la a cada comando que necessite da permissão. Exemplo:
+
+```shell
+sudo -i
+```
+
+```shell
+exit                                                  
+```
+
 # [1] Módulo de monitoramento em CPU
 
 ## Dependências:
@@ -116,7 +128,7 @@ O monitoramento pode ser realizado com os comandos:
 ```
 
 ```shell
-sudo gpu_monitoring_module.sh > output.dat
+gpu_monitoring_module.sh > output.dat
 ```
 
 ## Arquivo de saída
@@ -164,11 +176,11 @@ Para converter os dados do monitoramento em GPU, é preciso executar o script 'p
 O script pode ser compilado e executado com os comandos:
 
 ```shell
-g++ -o parse_json_CPU parse_json_CPU.cpp
+g++ -o parse_json_GPU parse_json_GPU.cpp
 ```
 
 ```shell
-./parse_json_CPU output.dat
+./parse_json_GPU output.dat
 ```
 
 ## Nota
