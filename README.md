@@ -25,7 +25,7 @@ sudo apt-get install ipmitool
 É necessário também confirgurar os sensores com os seguinte comando:
 
 ```shell
-sudo modprobe ipmi_si & modprobe ipmi_devintf & modprobe ipmi_msghandler
+sudo modprobe ipmi_si & sudo modprobe ipmi_devintf & sudo modprobe ipmi_msghandler
 ```
 
 # [1] Módulo de monitoramento em CPU
