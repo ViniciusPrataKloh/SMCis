@@ -2,7 +2,8 @@
 
 sleep 2 ;
 PID=`ps a | grep ./gpu_monitoring_module.sh | awk '{print $1}'` ;
-BIN=""
+APP="" ;
+BIN="" ;
 
 echo "| App: " $APP ;
 echo "" ;
