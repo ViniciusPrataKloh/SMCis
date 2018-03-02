@@ -112,6 +112,7 @@ Para monitorar aplicações em GPU com o SMCis, também é preciso executar dois
 
 No 'launcher.sh' é necessário informar o nome da aplicação a ser executada:
 
+* APP="nome da aplicação"
 * BIN="comando para executar a aplicação"
 
 O script 'GPU_monitor.cu' precisa ser compilado pois é utilizado pelo 'gpu_monitoring_module.sh':
