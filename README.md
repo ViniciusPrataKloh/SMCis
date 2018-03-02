@@ -4,6 +4,13 @@
 * [2] Módulo de monitoramento em GPU
 * [3] Módulo de visualização - GraphCis
 
+## Download
+
+Os arquivos podem ser baixados pelo link https://github.com/ViniciusPrataKloh/SMCis.git
+
+```shell
+git clone https://github.com/ViniciusPrataKloh/SMCis.git
+```
 
 ## Descrição
 Para contornar as limitações encontradas nos sistemas de monitoramento convencionais foi desenvolvido o SMCis. Esse sistema tem o objetivo de ser uma ferramenta para o monitoramento de aplicações e visualização de dados experimentais, de fácil utilização, com altas taxas de amostragem e baixo impacto no consumo de recursos do sistema. A principal característica do SMCis é monitorar o consumo dos recursos pela aplicação em execução, permitindo relacionar graficamente o desempenho e consumo de recursos computacionais com o consumo de energia.
@@ -22,7 +29,7 @@ Os módulos de monitoramento coletam as informações dos sensores de potência 
 sudo apt-get install ipmitool
 ```
 
-É necessário também confirgurar os sensores com os seguinte comando:
+É necessário também configurar os sensores com os seguinte comando:
 
 ```shell
 sudo modprobe ipmi_si & sudo modprobe ipmi_devintf & sudo modprobe ipmi_msghandler
