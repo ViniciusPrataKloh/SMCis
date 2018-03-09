@@ -14,7 +14,7 @@ git clone https://github.com/ViniciusPrataKloh/SMCis.git
 
 ## Vídeo tutorial
 
-Para auxiliar na utilização do SMCis foi desenvolvido um vídeo de utilização da ferramenta, disponível em https://youtu.be/0ueFhr6JvtM.
+Para auxiliar na utilização do SMCis foi desenvolvido um vídeo demonstrativo da ferramenta, disponível em https://youtu.be/0ueFhr6JvtM.
 
 ## Descrição
 Para contornar as limitações encontradas nos sistemas de monitoramento convencionais foi desenvolvido o SMCis. Esse sistema tem o objetivo de ser uma ferramenta para o monitoramento de aplicações e visualização de dados experimentais, de fácil utilização, com altas taxas de amostragem e baixo impacto no consumo de recursos do sistema. A principal característica do SMCis é monitorar o consumo dos recursos pela aplicação em execução, permitindo relacionar graficamente o desempenho e consumo de recursos computacionais com o consumo de energia.
