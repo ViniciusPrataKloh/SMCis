@@ -71,7 +71,7 @@ Assim como em um escalonador, é preciso configurar as variáveis básicas no ar
 * NUM_THREADS="número de threads"
 * BIN="comando para executar a aplicação"
 
-O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento é necessário passar como parâmentos o nome da aplicação a ser monitorada e a interface de rede.
+O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento é necessário passar como parâmetos o nome da aplicação a ser monitorada e a interface de rede.
 
 Para listar as interfaces de rede ativas, pode ser utilizado o comando:
 
@@ -95,7 +95,7 @@ Ou utilizando apenas um Terminal com o comando:
 ./launcher.sh & sudo python3 cpu_monitoring_module.py <nome da aplicação> <nome da interface de rede>
 ```
 
-Obs: O launcher deve sempre iniciar a execução antes do monitor.
+Obs: O launcher deve sempre iniciar a execução antes do módulo de monitoramento.
 
 ## Arquivos de saída
 
@@ -114,7 +114,7 @@ Instalação do CUDA Toolkit que pode ser baixado pelo link https://developer.nv
 
 Para monitorar aplicações em GPU com o SMCis, também é preciso executar dois scripts: 'launcher.sh' e 'gpu_monitoring_module.sh'.
 
-No 'launcher.sh' é necessário informar o nome da aplicação a ser executada:
+No 'launcher.sh' é necessário configurar as seguintes variáveis:
 
 * APP="nome da aplicação"
 * BIN="comando para executar a aplicação"
