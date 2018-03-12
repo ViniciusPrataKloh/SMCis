@@ -36,7 +36,7 @@ sudo apt-get install ipmitool
 É necessário também configurar os sensores com os seguinte comando:
 
 ```shell
-sudo modprobe ipmi_si & sudo modprobe ipmi_devintf & sudo modprobe ipmi_msghandler
+sudo modprobe ipmi_si && sudo modprobe ipmi_devintf && sudo modprobe ipmi_msghandler
 ```
 
 ## Importante
@@ -71,9 +71,9 @@ Assim como em um escalonador, é preciso configurar as variáveis básicas no ar
 * NUM_THREADS="número de threads"
 * BIN="comando para executar a aplicação"
 
-O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento é necessário inserir o nome da placa de rede a ser monitorada e passar como parâmento o nome da aplicação a ser monitorada.
+O 'process_monitor.py' é responsável pelo monitoramento da aplicação, e para seu funcionamento é necessário passar como parâmentos o nome da aplicação a ser monitorada e a interface de rede.
 
-Para listar as placas de rede ativas, pode ser utilizado o comando:
+Para listar as interfaces de rede ativas, pode ser utilizado o comando:
 
 ```shell
 ifconfig -a
