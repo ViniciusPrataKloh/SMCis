@@ -51,8 +51,7 @@ def io_rate_collector(p, i):
 # Instantaneous power collector
 #
 def power_collector():
-    #os.system("/usr/sbin/ipmi-dcmi --get-system-power-statistics | grep Current | awk '{print $4}' >> power.dat")
-    os.system("ipmitool dcmi power reading | grep Instantaneous | awk '{print $4}'")
+    os.system("ipmitool dcmi power reading | grep Instantaneous | awk '{print $4}'  >> power.dat")
     os.system("./temp.sh")
 
 #
@@ -75,24 +74,6 @@ def output(procname, timestamp, pid, cpu, mem, io):
 
     out_file.writelines(line)
     out_file.close()
-
-#
-# Writer output json file
-#
-def output_json(procname, timestamp, cpu, mem, power):
-    if os.path.exists("/home/viniciuspk/Documents/Experiments/Monitors/scripts_omp/"+procname+".json"):
-        out_file = open(procname+".json", 'a')
-        line = []
-        line.append("{\"timestamp\":" + str(timestamp) + ", ")
-        line.append("\"cpu\":" + str(cpu) + ", ")
-        line.append("\"mem\":" + str(mem) + ", ")
-        line.append("\"power\":" + str(power) + "},\n")
-        out_file.writelines(line)
-        out_file.close()
-    if not os.path.exists("/home/viniciuspk/Documents/Experiments/Monitors/scripts_omp/"+procname+".json"):
-        out_file = open(procname+".json", 'a')
-        out_file.writelines("[")
-        out_file.close()
 
 #
 #  Main function
@@ -125,12 +106,10 @@ def main():
                   DATE = datetime.datetime.now()
                   now = int(DATE.timestamp() * 1000)
                   output(PROCNAME, now-start, pid_process.pid, cpu, mem, io)
-                  #output_json(PROCNAME, now-start, cpu, mem, str(200))
         except Exception as e:
              power_collector()
              DATE = datetime.datetime.now()
              now = int(DATE.timestamp() * 1000)
-             #output_json(PROCNAME, now-start, 0.00, 0.00, str(200))
              output(PROCNAME, now-start, 0, 0.00, 0.00, {'disk': (0, 0, 0), 'net': (0, 0, 0)})
              time.sleep(0.2)
 
