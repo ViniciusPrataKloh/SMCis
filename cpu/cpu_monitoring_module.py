@@ -86,16 +86,23 @@ def main():
     start = int(DATE.timestamp() * 1000)
 
     for id in psutil.pids():
-         pid = psutil.Process(id)
-         if ( pid.name() == LAUNCHER ):
-             pid_launcher = pid
+        try:
+            pid = psutil.Process(id)
+            if ( pid.name() == LAUNCHER ):
+                pid_launcher = pid
+        except Exception as e:
+            continue
 
     print("Launcher is running with: " + str(pid_launcher))
     while pid_launcher.is_running():
         for pid in psutil.pids():
-             proc = psutil.Process(pid)
-             if ( proc.name() == PROCNAME ):
-                  pid_process = proc
+            try:
+                proc = psutil.Process(pid)
+                if ( proc.name() == PROCNAME ):
+                    pid_process = proc
+            except Exception as e:
+                continue
+
         try:
              print("Monitoring application: " + str(pid_process.name()))
              while pid_process.is_running():
